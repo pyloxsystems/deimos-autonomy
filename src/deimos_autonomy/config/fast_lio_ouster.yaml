@@ -1,0 +1,50 @@
+# FAST-LIO2 config for Ouster OS1
+#
+# Tune `n_scans` to match the actual OS1 beam count:
+#   OS1-32  -> n_scans: 32
+#   OS1-64  -> n_scans: 64   (default assumed)
+#   OS1-128 -> n_scans: 128
+#
+# Tune `extrinsic_T` and `extrinsic_R` for the actual mounting transform
+# from base_link to ouster_lidar frame (measure from rover CAD).
+
+/**:
+  ros__parameters:
+    use_sim_time: false
+
+    common:
+      lid_topic: "/ouster/points"
+      imu_topic: "/ouster/imu"
+      time_sync_en: false
+      time_offset_lidar_to_imu: 0.0
+
+    preprocess:
+      lidar_type: 3        # 1=Velodyne, 2=Livox, 3=Ouster
+      scan_line: 64        # OS1-64 default. Update for OS1-32 or OS1-128.
+      timestamp_unit: 3    # Ouster timestamps are in seconds
+      scan_rate: 10
+      blind: 0.5           # Min distance (m) to ignore self-returns
+
+    mapping:
+      acc_cov: 0.1
+      gyr_cov: 0.1
+      b_acc_cov: 0.0001
+      b_gyr_cov: 0.0001
+      fov_degree: 360.0    # Ouster is 360 horizontal
+      det_range: 100.0     # OS1 max range
+      extrinsic_est_en: true
+      # Ouster IMU mounted at LiDAR origin in OS1 (translation = zero)
+      extrinsic_T: [0.0, 0.0, 0.0]
+      extrinsic_R: [1.0, 0.0, 0.0,
+                    0.0, 1.0, 0.0,
+                    0.0, 0.0, 1.0]
+
+    publish:
+      path_en: true
+      scan_publish_en: true
+      dense_publish_en: false
+      scan_bodyframe_pub_en: false
+
+    pcd_save:
+      pcd_save_en: false
+      interval: -1

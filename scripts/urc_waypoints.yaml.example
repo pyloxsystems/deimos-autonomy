@@ -1,0 +1,46 @@
+# Example URC autonomy mission waypoints.
+# At competition, replace x/y with UTM coordinates of the actual posts
+# (URC supplies WGS84 lat/lon; convert to UTM Zone 12N for MDRS).
+#
+# Waypoint types:
+#   gps_post        — drive to coordinates within tolerance, no fiducial.
+#   aruco_post      — drive to coordinates, then ArUco final-approach.
+#   object          — drive to coordinates, then YOLO-verify the named object.
+
+waypoints:
+  - id: 1
+    type: gps_post
+    x: 524350.0
+    y: 4250120.0
+    tolerance: 3.0
+
+  - id: 2
+    type: aruco_post
+    x: 524410.0
+    y: 4250155.0
+    tolerance: 3.0
+    marker_id: 4
+
+  - id: 3
+    type: object
+    x: 524488.0
+    y: 4250200.0
+    tolerance: 10.0
+    object_class: orange_rubber_mallet
+    object_search_radius: 8.0
+
+  - id: 4
+    type: object
+    x: 524540.0
+    y: 4250265.0
+    tolerance: 10.0
+    object_class: rock_pick
+    object_search_radius: 8.0
+
+  - id: 5
+    type: object
+    x: 524600.0
+    y: 4250320.0
+    tolerance: 10.0
+    object_class: water_bottle
+    object_search_radius: 8.0

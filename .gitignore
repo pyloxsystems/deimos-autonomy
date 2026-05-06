@@ -1,0 +1,32 @@
+# ROS2 build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# Reference repo (do not include in our PR)
+reference/
+
+# Local data: DEM tiles, YOLO weights, engines, bags
+*.engine
+*.onnx
+*.pt
+*.tif
+*.tiff
+*.bag
+deimos_data/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# macOS
+.DS_Store

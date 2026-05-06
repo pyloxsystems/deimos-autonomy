@@ -1,0 +1,12 @@
+navsat_transform:
+  ros__parameters:
+    frequency: 30.0
+    delay: 3.0
+    magnetic_declination_radians: 0.16   # MDRS Hanksville UT (~9.2 deg E). Update before comp.
+    yaw_offset: 0.0
+    zero_altitude: true
+    broadcast_utm_transform: true
+    broadcast_utm_transform_as_parent_frame: false
+    publish_filtered_gps: true
+    use_odometry_yaw: false
+    wait_for_datum: false
