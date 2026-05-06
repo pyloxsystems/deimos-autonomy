@@ -21,7 +21,7 @@ setup(
     maintainer='Emilio Girard',
     maintainer_email='pyloxsystems@gmail.com',
     description='DEIMOS autonomy stack: FAST-LIO2 + EKF + Nav2 + DEM + ArUco + YOLO TRT',
-    license='Apache-2.0',
+    license='PolyForm-Noncommercial-1.0.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [

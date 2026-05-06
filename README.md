@@ -72,6 +72,18 @@ ros2 launch deimos_autonomy autonomy.launch.py compute_profile:=nx_16gb
 ros2 launch deimos_autonomy autonomy.launch.py compute_profile:=nano_8gb use_sim_time:=true
 ```
 
+### Pre-flight diagnostic
+
+Before integrating, run the read-only diagnostic on your rover:
+
+```bash
+python3 scripts/deimos_preflight.py
+```
+
+It validates ROS2 topics, TF tree, CAN bus, Ouster reachability, ZED2 USB,
+power mode, RAM/disk headroom, and JetPack version. Pass/warn/fail report
+with actionable fixes. Sample report at `docs/SAMPLE_PREFLIGHT_REPORT.txt`.
+
 ---
 
 ## Topic graph
@@ -146,7 +158,7 @@ deimos_autonomy/
 
 ## License
 
-Apache-2.0. See LICENSE.
+PolyForm Noncommercial 1.0.0. See LICENSE. Free for research, education, and noncommercial use. Commercial use requires a separate license — contact pyloxsystems@gmail.com.
 
 ---
 

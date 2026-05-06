@@ -10,7 +10,7 @@
     Dual compute profiles: Orin NX 16GB (primary) / Orin Nano 8GB (fallback).
   </description>
   <maintainer email="pyloxsystems@gmail.com">Emilio Girard</maintainer>
-  <license>Apache-2.0</license>
+  <license>PolyForm-Noncommercial-1.0.0</license>
 
   <buildtool_depend>ament_python</buildtool_depend>
 
